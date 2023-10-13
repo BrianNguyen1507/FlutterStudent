@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -6,10 +8,11 @@ class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() => _HomePageState();
 }
-  double _volume = 0.0;
+
+double _volume = 0.0;
+
 class _HomePageState extends State<HomePage> {
   @override
- 
   Widget build(BuildContext context) {
     return Scaffold(
       //APPBAR
@@ -25,7 +28,7 @@ class _HomePageState extends State<HomePage> {
                   .showSnackBar(const SnackBar(content: Text('LIKED')));
             },
           ),
-          //ICON BUTTON INCREASE VOLUME 
+          //ICON BUTTON INCREASE VOLUME
           IconButton(
             icon: const Icon(Icons.volume_up),
             tooltip: 'Increase volume by 10',
@@ -35,11 +38,24 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-          
+           Text('Volume : $_volume'),
         ],
       ),
       //BODY
-      body: Text('THIS IS BODY SITE : Increase ->  Volume : $_volume'),
+      body:  Row(
+        mainAxisSize: MainAxisSize.min,
+        children: <Widget>[
+           const ElevatedButton(
+            onPressed: null,
+            child:  Text('Disabled'),
+          ),
+           const SizedBox(height: 20, width: 40,),
+          ElevatedButton(
+            onPressed:() { },
+            child: const Text('Enabled'),
+          ),
+        ],
+      ),
       //BOTTOM_NAV
       bottomNavigationBar: BottomNavigationBar(
         items: const [
