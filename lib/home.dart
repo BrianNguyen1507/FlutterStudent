@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -38,21 +36,46 @@ class _HomePageState extends State<HomePage> {
               });
             },
           ),
-           Text('Volume : $_volume'),
+          Text('Volume : $_volume'),
         ],
       ),
       //BODY
-      body:  Row(
-        mainAxisSize: MainAxisSize.min,
-        children: <Widget>[
-           const ElevatedButton(
-            onPressed: null,
-            child:  Text('Disabled'),
+      body: Row(
+        children: [
+          Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const ElevatedButton(
+                onPressed: null,
+                child: Text('Disabled'),
+              ),
+              const SizedBox(
+                height: 20,
+                width: 40,
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _volume += 10;
+                  });
+                },
+                child: const Text('Enabled'),
+              ),
+              Text('Volume : $_volume')
+            ],
           ),
-           const SizedBox(height: 20, width: 40,),
-          ElevatedButton(
-            onPressed:() { },
-            child: const Text('Enabled'),
+            const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+               ElevatedButton(
+                onPressed: null,
+                child: Text('Disabled'),
+              ),
+               ElevatedButton(
+                onPressed: null,
+                child: Text('Disabled'),
+              ),
+            ],
           ),
         ],
       ),
