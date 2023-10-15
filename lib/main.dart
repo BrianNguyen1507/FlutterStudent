@@ -1,5 +1,5 @@
-import 'package:demo_flutter/home.dart';
 import 'package:flutter/material.dart';
+import 'package:demo_flutter/Index.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +17,7 @@ class _MyAppState extends State<MyApp> {
     return const MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner:false,
-      home:  HomePage(),
+      home: IndexPage(),
     );
   }
 }
