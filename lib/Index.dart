@@ -36,7 +36,6 @@ class _IndexPageState extends State<IndexPage> {
           onTap: (value) => setState(() {
             index = value;
           }),
-          
           items: const [
             BottomNavigationBarItem(
               label: 'Home',
