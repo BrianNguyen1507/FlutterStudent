@@ -31,6 +31,8 @@ class _IndexPageState extends State<IndexPage> {
           showSelectedLabels: true,
           showUnselectedLabels: false,
           backgroundColor: Colors.blue,
+          selectedFontSize: 15,
+          iconSize: 30,
           type: BottomNavigationBarType.fixed,
           currentIndex: index,
           onTap: (value) => setState(() {

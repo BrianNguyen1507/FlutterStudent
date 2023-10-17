@@ -9,6 +9,11 @@ class SettingPage extends StatefulWidget {
 class _SettingPageState extends State<SettingPage> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+   return const Scaffold(
+      backgroundColor: Colors.blue,
+      body:Row(
+        
+      ),
+    );
   }
 }

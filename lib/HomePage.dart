@@ -7,8 +7,6 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
-double _volume = 0.0;
-
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -19,67 +17,32 @@ class _HomePageState extends State<HomePage> {
         actions: <Widget>[
           //ICON BUTTON POP UP SNACKBAR
           IconButton(
-            icon: const Icon(Icons.thumb_up_alt),
-            tooltip: 'Like snackbar',
+            icon: const Icon(
+              Icons.shopping_cart_sharp,
+              size: 30,
+            ),
+            tooltip: 'Cart_view',
             onPressed: () {
               ScaffoldMessenger.of(context)
                   .showSnackBar(const SnackBar(content: Text('LIKED')));
             },
           ),
           //ICON BUTTON INCREASE VOLUME
-          IconButton(
-            icon: const Icon(Icons.volume_up),
-            tooltip: 'Increase volume by 10',
-            onPressed: () {
-              setState(() {
-                _volume += 10;
-              });
-            },
-          ),
-          Text('Volume : $_volume'),
         ],
       ),
       //BODY
-      body: Row(
+      body: Column(
         children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              const ElevatedButton(
-                onPressed: null,
-                child: Text('Disabled'),
-              ),
-              const SizedBox(
-                height: 20,
-                width: 40,
-              ),
-              ElevatedButton(
-                onPressed: () {
-                  setState(() {
-                    _volume += 10;
-                  });
-                },
-                child: const Text('Enabled'),
-              ),
-              Text('Volume : $_volume')
-            ],
-          ),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: null,
-                child: Text('Disabled'),
-              ),
-              ElevatedButton(
-                onPressed: null,
-                child: Text('Disabled'),
-              ),
-              ElevatedButton(
-                onPressed: null,
-                child: Text('Disabled'),
-              ),
-            ],
+          Container(
+            margin: const EdgeInsets.only(
+              top: 10,
+            ),
+            height: 200,
+            width: 410,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10.0),
+              color: Colors.yellow,
+            ),
           ),
         ],
       ),
